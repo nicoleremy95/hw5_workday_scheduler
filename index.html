@@ -30,8 +30,8 @@
     </header>
     <div class="container">
       <!-- Timeblocks go here -->
-      <form class="row" method="POST" id="9am">
-        <label class="hour" for="cal-event">9am</label>
+      <form class="row" method="POST" id="09">
+        <label class="hour" value="text" for="cal-event">9am</label>
         <input type="text" placeholder="meeting" name="cal-event" />
         <button class="saveBtn">
             <i: hover></i:>
@@ -46,25 +46,56 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script>
           // create a function that does stuff when you click on the save button 
-          var userInput = "";
-          var calItems = [];
-          $(".saveBtn").click(function(event){
-            //prevent default of click 
-            event.preventDefault();
+          var hourContent = form.label.id
+          var currentHour = $("label").text("id");
+          console.log(currentHour);
 
-            //establish a variable for the user input 
-            var userInput = $("input");
-            var newCalItem = userInput.val();
-            console.log(newCalItem)
+        //   moment().format("HH");
 
-            //locally store item 
-            localStorage.setItem("calItems", JSON.stringify(newCalItem))
-            var storedItems = JSON.parse(localStorage.getItem("calItems")); 
-          });
+        //   var calItems = [];
+        //   $(".saveBtn").click(function(event){
+        //     //prevent default of click 
+        //     event.preventDefault();
+
+        //     //establish a variable for the user input 
+        //     var userInput = $("input");
+        //     var newCalItem = userInput.val();
+        //     console.log(newCalItem)
+
+        //     //locally store item 
+        //     localStorage.setItem("calItems", JSON.stringify(newCalItem))
+        //     var storedItems = JSON.parse(localStorage.getItem("calItems")); 
+        //   });
 
 
-        // TODO: create an if statement. If the day is the current day and time is between a certain range, then give it a certain class 
-        
+        // // TODO: create an if statement. If the day is the current day and time is between a certain range, then give it a certain class 
+        // function time(){
+        //   // var relativeTime = {
+        //   //   future: "in %s",
+        //   //   past: "%s ago",
+        //   //   h: "an hour"
+        //   // }
+        //   // var future = relativeTime.future;
+        //   // console.log(future)
+        //   // var past = relativeTime.past;
+        //   // console.log(past);
+        //   // var present = moment();
+        //   // console.log(present)
+        //   moment.parseZone("2013-01-01T00:00:00-13:00");
+
+        //   if (currentHour.isSame(moment(HH))) {
+        //     $("input").addClass("present");
+        //   }
+        //   if (currentHour > (moment(HH))) {
+        //     $("input").addClass("future")
+        //   }
+        //   else{
+        //     $("input").addClass("past")
+        //   }
+    
+          
+        // }
+        // time();
     </script>   
   </body>
 </html>
