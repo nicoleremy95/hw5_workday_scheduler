@@ -30,8 +30,29 @@
     </header>
     <div class="container">
       <!-- Timeblocks go here -->
+      <form class="row" method="POST" id="07">
+        <label class="hour" value="text" for="cal-event">07</label>
+        <input type="text" placeholder="meeting" name="cal-event" />
+        <button class="saveBtn">
+            <i: hover></i:>
+        </button>
+      </form>
+      <form class="row" method="POST" id="08">
+        <label class="hour" value="text" for="cal-event">08</label>
+        <input type="text" placeholder="meeting" name="cal-event" />
+        <button class="saveBtn">
+            <i: hover></i:>
+        </button>
+      </form>
       <form class="row" method="POST" id="09">
-        <label class="hour" value="text" for="cal-event">9am</label>
+        <label class="hour" value="text" for="cal-event">09</label>
+        <input type="text" placeholder="meeting" name="cal-event" />
+        <button class="saveBtn">
+            <i: hover></i:>
+        </button>
+      </form>
+      <form class="row" method="POST" id="10">
+        <label class="hour" value="text" for="cal-event">10</label>
         <input type="text" placeholder="meeting" name="cal-event" />
         <button class="saveBtn">
             <i: hover></i:>
@@ -45,57 +66,67 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script>
-          // create a function that does stuff when you click on the save button 
-          var hourContent = form.label.id
-          var currentHour = $("label").text("id");
-          console.log(currentHour);
+          // // create a function that does stuff when you click on the save button 
+          var calItems = [];
+          $(".saveBtn").click(function(event){
+            //prevent default of click 
+            event.preventDefault();
 
-        //   moment().format("HH");
+            //establish a variable for the user input 
+            var userInput = $("input");
+            var newCalItem = userInput.val();
+            console.log(newCalItem)
 
-        //   var calItems = [];
-        //   $(".saveBtn").click(function(event){
-        //     //prevent default of click 
-        //     event.preventDefault();
-
-        //     //establish a variable for the user input 
-        //     var userInput = $("input");
-        //     var newCalItem = userInput.val();
-        //     console.log(newCalItem)
-
-        //     //locally store item 
-        //     localStorage.setItem("calItems", JSON.stringify(newCalItem))
-        //     var storedItems = JSON.parse(localStorage.getItem("calItems")); 
-        //   });
+            //locally store item 
+            localStorage.setItem("calItems", JSON.stringify(newCalItem))
+            var storedItems = JSON.parse(localStorage.getItem("calItems")); 
+          });
 
 
-        // // TODO: create an if statement. If the day is the current day and time is between a certain range, then give it a certain class 
-        // function time(){
-        //   // var relativeTime = {
-        //   //   future: "in %s",
-        //   //   past: "%s ago",
-        //   //   h: "an hour"
-        //   // }
-        //   // var future = relativeTime.future;
-        //   // console.log(future)
-        //   // var past = relativeTime.past;
-        //   // console.log(past);
-        //   // var present = moment();
-        //   // console.log(present)
-        //   moment.parseZone("2013-01-01T00:00:00-13:00");
 
-        //   if (currentHour.isSame(moment(HH))) {
-        //     $("input").addClass("present");
-        //   }
-        //   if (currentHour > (moment(HH))) {
-        //     $("input").addClass("future")
-        //   }
-        //   else{
-        //     $("input").addClass("past")
-        //   }
-    
+        //  TODO: create variables for the time
+          var hourCurrentInput = $(".hour").text();
+          console.log(hourCurrentInput);
+
+          var hours = (07,08,09,10);
+
+          var moment = moment().format("HH");
+          console.log(moment);
+
+        // TODO: create an if statement. If the day is the current day and time is between a certain range, then give it a certain class 
+          {
           
-        // }
-        // time();
+          function time(){
+          for (i = 0; i<hours.length; i++){
+          if (moment===hourCurrentInput) {
+            $("input").addClass("present");
+            console.log("yay")
+          }
+          if (moment > hourCurrentInput) {
+            $("input").addClass("future")
+          }
+          else{
+            $("input").addClass("past")
+          } 
+        }}}
+        time();
     </script>   
   </body>
 </html>
+
+
+
+
+
+<!-- var relativeTime = {
+  //   future: "in %s",
+  //   past: "%s ago",
+  //   h: "an hour"
+  // }
+  // var future = relativeTime.future;
+  // console.log(future)
+  // var past = relativeTime.past;
+  // console.log(past);
+  // var present = moment();
+  // console.log(present)
+  // moment.parseZone("2013-01-01T00:00:00-13:00"); -->
