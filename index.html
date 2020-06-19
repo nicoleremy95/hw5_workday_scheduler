@@ -28,36 +28,40 @@
       <p class="lead">A simple calendar app for scheduling your work day</p>
       <p id="currentDay" class="lead"></p>
     </header>
+    
     <div class="container">
       <!-- Timeblocks go here -->
-      <form class="row" method="POST" id="07">
-        <label class="hour" value="text" for="cal-event">07</label>
+    
+      <form class="row" method="POST" id="seven">
+        <label class="hour seven" value="text" for="cal-event">07</label>
+       
         <input type="text" placeholder="meeting" name="cal-event" />
         <button class="saveBtn">
             <i: hover></i:>
         </button>
       </form>
       <form class="row" method="POST" id="08">
-        <label class="hour" value="text" for="cal-event">08</label>
+        <label class="hour eight" value="text" for="cal-event">08</label>
         <input type="text" placeholder="meeting" name="cal-event" />
         <button class="saveBtn">
             <i: hover></i:>
         </button>
       </form>
       <form class="row" method="POST" id="09">
-        <label class="hour" value="text" for="cal-event">09</label>
+        <label class="hour nine time-block" value="text" for="cal-event">09</label>
         <input type="text" placeholder="meeting" name="cal-event" />
         <button class="saveBtn">
             <i: hover></i:>
         </button>
       </form>
       <form class="row" method="POST" id="10">
-        <label class="hour" value="text" for="cal-event">10</label>
-        <input type="text" placeholder="meeting" name="cal-event" />
+        <label class="hour ten time-block" value="text" for="cal-event">10</label>
+        <input type="text" placeholder="meeting" name="cal-event"/>
         <button class="saveBtn">
             <i: hover></i:>
         </button>
       </form>
+    
    
     </div>
 
@@ -85,31 +89,90 @@
 
 
         //  TODO: create variables for the time
-          var hourCurrentInput = $(".hour").text();
-          console.log(hourCurrentInput);
-
-          var hours = (07,08,09,10);
-
           var moment = moment().format("HH");
           console.log(moment);
+          
+          var seven = $(".seven").text();
+          console.log(seven);
+
+          var eight = $(".eight").text();
+          console.log(eight);
+
+          var nine = $(".nine").text();
+          console.log(nine);
+
+          var ten = $(".ten").text();
+          console.log(ten);
 
         // TODO: create an if statement. If the day is the current day and time is between a certain range, then give it a certain class 
-          {
           
-          function time(){
-          for (i = 0; i<hours.length; i++){
-          if (moment===hourCurrentInput) {
-            $("input").addClass("present");
-            console.log("yay")
+          function sevenAm(){
+            if (moment===seven) {
+            $(".seven").addClass("present");
+            console.log("present")
           }
-          if (moment > hourCurrentInput) {
-            $("input").addClass("future")
+          if (moment < seven) {
+            $(".seven").addClass("future")
+            console.log("future")
           }
           else{
-            $("input").addClass("past")
+            $(".seven").addClass("past")
+            console.log("past")
           } 
-        }}}
-        time();
+          }
+          sevenAm();
+
+          function eightAm(){
+            if (moment===eight) {
+            $(".eight").addClass("present");
+            console.log("present")
+          }
+          if (moment < eight) {
+            $(".eight").addClass("future")
+            console.log("future")
+          }
+          else{
+            $(".eight").addClass("past")
+            console.log("past")
+          } 
+          }
+          eightAm();
+
+          function nineAm(){
+            if (moment===nine) {
+              
+            $(".nine").addClass("present");
+            console.log("present")
+          }
+          if (moment < nine) {
+            $(".nine").addClass("future")
+            console.log("future")
+          }
+          else{
+            $(".nine").addClass("past")
+            console.log("past")
+          } 
+          }
+          nineAm();
+
+          function tenAm(){
+            if (moment===ten) {
+              
+            $(".ten").addClass("present");
+            console.log("present")
+          }
+          if (moment < ten) {
+            $(".ten").addClass("future")
+            console.log("future")
+          }
+          else{
+            $(".ten").addClass("past")
+            console.log("past")
+          } 
+          }
+          tenAm();
+
+      
     </script>   
   </body>
 </html>
@@ -130,3 +193,25 @@
   // var present = moment();
   // console.log(present)
   // moment.parseZone("2013-01-01T00:00:00-13:00"); -->
+
+<!-- 
+  //   function time(){
+    //   for (i = 0; i<hours.length; i++){
+    //   if (moment===hourCurrentInput) {
+    //     $("input").addClass("present");
+    //     console.log("yay")
+    //   }
+    //   if (moment > hourCurrentInput) {
+    //     $("input").addClass("future")
+    //   }
+    //   else{
+    //     $("input").addClass("past")
+    //   } 
+    // }}
+    // time(); -->
+
+
+    <!-- // var seven = $("#seven").text();
+          // // console.log(seven);
+
+          // var hours = [07,08,09,10]; -->
