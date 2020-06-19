@@ -32,32 +32,45 @@
     <div class="container">
       <!-- Timeblocks go here -->
     
-      <form class="row" method="POST" id="seven">
-        <label class="hour seven" value="text" for="cal-event">07</label>
-       
-        <input type="text" placeholder="meeting" name="cal-event" />
-        <button class="saveBtn">
+      <form class="row" method="POST" >
+        <label class="hour seven time-block" value="text" for="cal-event">07</label>
+        <input type="text" placeholder="meeting" name="cal-event" class="seven" />
+        <button class="saveBtn sevenBtn">
             <i: hover></i:>
         </button>
       </form>
-      <form class="row" method="POST" id="08">
-        <label class="hour eight" value="text" for="cal-event">08</label>
-        <input type="text" placeholder="meeting" name="cal-event" />
-        <button class="saveBtn">
+      <form class="row" method="POST">
+        <label class="hour eight time-block" value="text" for="cal-event">08</label>
+        <input type="text" placeholder="meeting" name="cal-event" class="eight" />
+        <button class="saveBtn eightBtn">
             <i: hover></i:>
         </button>
       </form>
       <form class="row" method="POST" id="09">
         <label class="hour nine time-block" value="text" for="cal-event">09</label>
-        <input type="text" placeholder="meeting" name="cal-event" />
-        <button class="saveBtn">
+        <input type="text" placeholder="meeting" name="cal-event" class="nine" />
+        <button class="saveBtn nineBtn">
             <i: hover></i:>
         </button>
       </form>
       <form class="row" method="POST" id="10">
         <label class="hour ten time-block" value="text" for="cal-event">10</label>
-        <input type="text" placeholder="meeting" name="cal-event"/>
-        <button class="saveBtn">
+        <input type="text" placeholder="meeting" name="cal-event" class="ten"/>
+        <button class="saveBtn tenBtn">
+            <i: hover></i:>
+        </button>
+      </form>
+      <form class="row" method="POST" id="11">
+        <label class="hour eleven time-block" value="text" for="cal-event">11</label>
+        <input type="text" placeholder="meeting" name="cal-event" class="eleven"/>
+        <button class="saveBtn elevenBtn">
+            <i: hover></i:>
+        </button>
+      </form>
+      <form class="row" method="POST" id="12">
+        <label class="hour twelve time-block" value="text" for="cal-event">12</label>
+        <input type="text" placeholder="meeting" name="cal-event" class="twelve"/>
+        <button class="saveBtn twelveBtn">
             <i: hover></i:>
         </button>
       </form>
@@ -71,8 +84,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script>
           // // create a function that does stuff when you click on the save button 
-          var calItems = [];
-          $(".saveBtn").click(function(event){
+          
+          var calItemsSeven = [];
+          $(".sevenBtn").click(function(event){
             //prevent default of click 
             event.preventDefault();
 
@@ -82,10 +96,24 @@
             console.log(newCalItem)
 
             //locally store item 
-            localStorage.setItem("calItems", JSON.stringify(newCalItem))
-            var storedItems = JSON.parse(localStorage.getItem("calItems")); 
+            localStorage.setItem("calItemsSeven", JSON.stringify(newCalItem))
+            var storedItems = JSON.parse(localStorage.getItem("calItemsSeven")); 
           });
 
+          var calItemsEight = [];
+          $(".eightBtn").click(function(event){
+            //prevent default of click 
+            event.preventDefault();
+
+            //establish a variable for the user input 
+            var userInput = $("input");
+            var newCalItem = userInput.val();
+            console.log(newCalItem)
+
+            //locally store item 
+            localStorage.setItem("calItemsEight", JSON.stringify(newCalItem))
+            var storedItems = JSON.parse(localStorage.getItem("calItemsEight")); 
+          });
 
 
         //  TODO: create variables for the time
@@ -104,35 +132,60 @@
           var ten = $(".ten").text();
           console.log(ten);
 
+          var eleven = $(".eleven").text();
+          console.log(eleven);
+
+          var twelve = $(".twelve").text();
+          console.log(twelve);
+
+          var one = $(".one").text();
+          console.log(ten);
+
+          var two = $(".two").text();
+          console.log(two);
+
+          var three = $(".three").text();
+          console.log(three);
+
+          var four = $(".four").text();
+          console.log(four);
+
+          var five = $(".five").text();
+          console.log(five);
+
         // TODO: create an if statement. If the day is the current day and time is between a certain range, then give it a certain class 
           
           function sevenAm(){
             if (moment===seven) {
-            $(".seven").addClass("present");
+            
+              var sevenInput = $(".seven")
+            $("input.seven").addClass("present");
             console.log("present")
           }
           if (moment < seven) {
-            $(".seven").addClass("future")
+            $("input.seven").addClass("future")
             console.log("future")
           }
           else{
-            $(".seven").addClass("past")
+            $("input.seven").addClass("past")
             console.log("past")
           } 
           }
           sevenAm();
 
+          // $("input").addClass("present")
+
           function eightAm(){
             if (moment===eight) {
-            $(".eight").addClass("present");
+            $("input.eight").addClass("present");
             console.log("present")
           }
           if (moment < eight) {
-            $(".eight").addClass("future")
+            $("input.eight").addClass("future")
             console.log("future")
           }
           else{
-            $(".eight").addClass("past")
+            $("input.eight").addClass("past")
             console.log("past")
           } 
           }
@@ -141,15 +194,15 @@
           function nineAm(){
             if (moment===nine) {
               
-            $(".nine").addClass("present");
+            $("input.nine").addClass("present");
             console.log("present")
           }
           if (moment < nine) {
-            $(".nine").addClass("future")
+            $("input.nine").addClass("future")
             console.log("future")
           }
           else{
-            $(".nine").addClass("past")
+            $("input.nine").addClass("past")
             console.log("past")
           } 
           }
@@ -158,19 +211,52 @@
           function tenAm(){
             if (moment===ten) {
               
-            $(".ten").addClass("present");
+            $("input.ten").addClass("present");
             console.log("present")
           }
           if (moment < ten) {
-            $(".ten").addClass("future")
+            $("input.ten").addClass("future")
             console.log("future")
           }
           else{
-            $(".ten").addClass("past")
+            $("input.ten").addClass("past")
             console.log("past")
           } 
           }
           tenAm();
+
+          function elevenAm(){
+            if (moment===eleven) {
+              
+            $("input.eleven").addClass("present");
+            console.log("present")
+          }
+          if (moment < eleven) {
+            $("input.eleven").addClass("future")
+            console.log("future")
+          }
+          else{
+            $("input.eleven").addClass("past")
+            console.log("past")
+          } 
+          }
+          elevenAm();
+          function twelvePm(){
+            if (moment===twelve) {
+              
+            $("input.twelve").addClass("present");
+            console.log("present")
+          }
+          if (moment < eleven) {
+            $("input.twelve").addClass("future")
+            console.log("future")
+          }
+          else{
+            $("input.twelve").addClass("past")
+            console.log("past")
+          } 
+          }
+          twelvePm();
 
       
     </script>   
