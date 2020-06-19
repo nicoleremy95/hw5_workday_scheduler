@@ -108,39 +108,89 @@
     <script>
           // // create a function that does stuff when you click on the save button 
           var storedItem7am = JSON.parse(localStorage.getItem("calItemsSeven")); 
+          var storedItem8am = JSON.parse(localStorage.getItem("calItemsEight")); 
+          var storedItem9am = JSON.parse(localStorage.getItem("calItemsNine")); 
+          var storedItem10am = JSON.parse(localStorage.getItem("calItemsTen"));
+          var storedItem11am = JSON.parse(localStorage.getItem("calItemsEleven"));
+          var storedItem12pm = JSON.parse(localStorage.getItem("calItemsTwelve"));
+          var storedItem1pm = JSON.parse(localStorage.getItem("calItemsOne"));
+          var storedItem2pm = JSON.parse(localStorage.getItem("calItemsTwo"));
+          var storedItem3pm = JSON.parse(localStorage.getItem("calItemsThree"));
+          var storedItem4pm = JSON.parse(localStorage.getItem("calItemsFour"));
+          
           if(storedItem7am !=null){
             $("input.seven").val(storedItem7am)
           }
-
-          var calItemsSeven = [];
           $(".sevenBtn").click(function(event){
-            //prevent default of click 
             event.preventDefault();
-
-            //establish a variable for the user input 
             var userInput = $("input.seven");
             var newCalItem = userInput.val();
-            console.log(newCalItem)
-
-            //locally store item 
             localStorage.setItem("calItemsSeven", JSON.stringify(newCalItem))
             
           });
 
-          var calItemsEight = [];
+          if(storedItem8am !=null){
+            $("input.eight").val(storedItem8am)
+          }
           $(".eightBtn").click(function(event){
-            //prevent default of click 
             event.preventDefault();
-
-            //establish a variable for the user input 
             var userInput = $("input.eight");
             var newCalItem = userInput.val();
-            console.log(newCalItem)
-
-            //locally store item 
             localStorage.setItem("calItemsEight", JSON.stringify(newCalItem))
-            var storedItems = JSON.parse(localStorage.getItem("calItemsEight")); 
+            
           });
+          
+          if(storedItem9am !=null){
+            $("input.nine").val(storedItem9am)
+          }
+          $(".nineBtn").click(function(event){
+            event.preventDefault();
+            var userInput = $("input.nine");
+            var newCalItem = userInput.val();
+            localStorage.setItem("calItemsNine", JSON.stringify(newCalItem))
+            
+          });
+
+          if(storedItem10am !=null){
+            $("input.ten").val(storedItem10am)
+          }
+          $(".tenBtn").click(function(event){
+            event.preventDefault();
+            var userInput = $("input.ten");
+            var newCalItem = userInput.val();
+            localStorage.setItem("calItemsTen", JSON.stringify(newCalItem))
+          });
+
+          if(storedItem10am !=null){
+            $("input.ten").val(storedItem10am)
+          }
+          $(".tenBtn").click(function(event){
+            event.preventDefault();
+            var userInput = $("input.ten");
+            var newCalItem = userInput.val();
+            localStorage.setItem("calItemsTen", JSON.stringify(newCalItem))
+          });
+
+          if(storedItem11am !=null){
+            $("input.eleven").val(storedItem11am)
+          }
+          $(".elevenBtn").click(function(event){
+            event.preventDefault();
+            var userInput = $("input.eleven");
+            var newCalItem = userInput.val();
+            localStorage.setItem("calItemsEleven", JSON.stringify(newCalItem))
+          });
+
+          if(storedItem12pm !=null){
+            $("input.twelve").val(storedItem12pm)
+          }
+          $(".twelveBtn").click(function(event){
+            event.preventDefault();
+            var userInput = $("input.twelve");
+            var newCalItem = userInput.val();
+            localStorage.setItem("calItemsEleven", JSON.stringify(newCalItem))
+          });
+          
 
 
         //  TODO: create variables for the time
