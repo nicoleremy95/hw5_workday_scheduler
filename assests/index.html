@@ -107,16 +107,16 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script>
           // // create a function that does stuff when you click on the save button 
-          var storedItem7am = JSON.parse(localStorage.getItem("calItemsSeven")); 
-          var storedItem8am = JSON.parse(localStorage.getItem("calItemsEight")); 
-          var storedItem9am = JSON.parse(localStorage.getItem("calItemsNine")); 
-          var storedItem10am = JSON.parse(localStorage.getItem("calItemsTen"));
-          var storedItem11am = JSON.parse(localStorage.getItem("calItemsEleven"));
-          var storedItem12pm = JSON.parse(localStorage.getItem("calItemsTwelve"));
-          var storedItem1pm = JSON.parse(localStorage.getItem("calItemsOne"));
-          // var storedItem2pm = JSON.parse(localStorage.getItem("calItemsTwo"));
-          var storedItem3pm = JSON.parse(localStorage.getItem("calItemsThree"));
-          var storedItem4pm = JSON.parse(localStorage.getItem("calItemsFour"));
+          var storedItem7am = JSON.parse(localStorage.getItem("calItemsSeven")|| ""); 
+          var storedItem8am = JSON.parse(localStorage.getItem("calItemsEight")|| ""); 
+          var storedItem9am = JSON.parse(localStorage.getItem("calItemsNine")|| ""); 
+          var storedItem10am = JSON.parse(localStorage.getItem("calItemsTen")|| "");
+          var storedItem11am = JSON.parse(localStorage.getItem("calItemsEleven")|| "");
+          var storedItem12pm = JSON.parse(localStorage.getItem("calItemsTwelve")|| "");
+          var storedItem1pm = JSON.parse(localStorage.getItem("calItemsOne")|| "");
+          // var storedItem2pm = JSON.parse(localStorage.getItem("calItemsTwo") || "");
+          var storedItem3pm = JSON.parse(localStorage.getItem("calItemsThree")|| "");
+          var storedItem4pm = JSON.parse(localStorage.getItem("calItemsFour")|| "");
           
           if(storedItem7am !=null){
             $("input.seven").val(storedItem7am)
@@ -225,8 +225,9 @@
           var moment = moment().format("HH");
           console.log(moment);
 
-          var currentDay = $("p#currentDay")
-          currentDay.text(); 
+          var startDate = moment().format("dddd, MMM, do YYYY");
+          // console.log(startDate)
+          // $("#currentDay").append(startDate)
           
           
           var seven = $(".seven").attr("data-hour");
