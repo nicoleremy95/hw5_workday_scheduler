@@ -190,15 +190,53 @@
             var newCalItem = userInput.val();
             localStorage.setItem("calItemsEleven", JSON.stringify(newCalItem))
           });
-          
 
+          if(storedItem1pm !=null){
+            $("input.one").val(storedItem1pm)
+          }
+          $(".oneBtn").click(function(event){
+            event.preventDefault();
+            var userInput = $("input.one");
+            var newCalItem = userInput.val();
+            localStorage.setItem("calItemsOne", JSON.stringify(newCalItem))
+          });
+
+          if(storedItem2pm !=null){
+            $("input.two").val(storedItem2pm)
+          }
+          $(".twoBtn").click(function(event){
+            event.preventDefault();
+            var userInput = $("input.two");
+            var newCalItem = userInput.val();
+            localStorage.setItem("calItemsTwo", JSON.stringify(newCalItem))
+          });
+          
+          if(storedItem3pm !=null){
+            $("input.three").val(storedItem3pm)
+          }
+          $(".threeBtn").click(function(event){
+            event.preventDefault();
+            var userInput = $("input.three");
+            var newCalItem = userInput.val();
+            localStorage.setItem("calItemsThree", JSON.stringify(newCalItem))
+          });
+
+          if(storedItem4pm !=null){
+            $("input.four").val(storedItem4pm)
+          }
+          $(".fourBtn").click(function(event){
+            event.preventDefault();
+            var userInput = $("input.four");
+            var newCalItem = userInput.val();
+            localStorage.setItem("calItemsFour", JSON.stringify(newCalItem))
+          });
 
         //  TODO: create variables for the time
           var moment = moment().format("HH");
           console.log(moment);
 
-          var currentDay = $("p#currentDay")
-          currentDay.text(); 
+          // var currentDay = $("p#currentDay")
+          // currentDay.text(); 
           
           
           var seven = $(".seven").attr("data-hour");
@@ -409,40 +447,3 @@
 </html>
 
 
-
-
-
-<!-- var relativeTime = {
-  //   future: "in %s",
-  //   past: "%s ago",
-  //   h: "an hour"
-  // }
-  // var future = relativeTime.future;
-  // console.log(future)
-  // var past = relativeTime.past;
-  // console.log(past);
-  // var present = moment();
-  // console.log(present)
-  // moment.parseZone("2013-01-01T00:00:00-13:00"); -->
-
-<!-- 
-  //   function time(){
-    //   for (i = 0; i<hours.length; i++){
-    //   if (moment===hourCurrentInput) {
-    //     $("input").addClass("present");
-    //     console.log("yay")
-    //   }
-    //   if (moment > hourCurrentInput) {
-    //     $("input").addClass("future")
-    //   }
-    //   else{
-    //     $("input").addClass("past")
-    //   } 
-    // }}
-    // time(); -->
-
-
-    <!-- // var seven = $("#seven").text();
-          // // console.log(seven);
-
-          // var hours = [07,08,09,10]; -->
