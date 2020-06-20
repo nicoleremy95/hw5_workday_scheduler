@@ -83,7 +83,7 @@
       </form>
       <form class="row" method="POST" id="2">
         <label class="hour two" value="text" data-hour="14">02 PM</label>
-        <input type="text" placeholder="meeting" class="one"/>
+        <input type="text" placeholder="meeting" class="two"/>
         <button class="saveBtn twoBtn">
             <i: hover></i:>
         </button>
@@ -114,7 +114,7 @@
           var storedItem11am = JSON.parse(localStorage.getItem("calItemsEleven"));
           var storedItem12pm = JSON.parse(localStorage.getItem("calItemsTwelve"));
           var storedItem1pm = JSON.parse(localStorage.getItem("calItemsOne"));
-          var storedItem2pm = JSON.parse(localStorage.getItem("calItemsTwo"));
+
           var storedItem3pm = JSON.parse(localStorage.getItem("calItemsThree"));
           var storedItem4pm = JSON.parse(localStorage.getItem("calItemsFour"));
           
@@ -161,16 +161,6 @@
             localStorage.setItem("calItemsTen", JSON.stringify(newCalItem))
           });
 
-          if(storedItem10am !=null){
-            $("input.ten").val(storedItem10am)
-          }
-          $(".tenBtn").click(function(event){
-            event.preventDefault();
-            var userInput = $("input.ten");
-            var newCalItem = userInput.val();
-            localStorage.setItem("calItemsTen", JSON.stringify(newCalItem))
-          });
-
           if(storedItem11am !=null){
             $("input.eleven").val(storedItem11am)
           }
@@ -201,15 +191,15 @@
             localStorage.setItem("calItemsOne", JSON.stringify(newCalItem))
           });
 
-          if(storedItem2pm !=null){
-            $("input.two").val(storedItem2pm)
-          }
-          $(".twoBtn").click(function(event){
-            event.preventDefault();
-            var userInput = $("input.two");
-            var newCalItem = userInput.val();
-            localStorage.setItem("calItemsTwo", JSON.stringify(newCalItem))
-          });
+          // if(storedItem2pm !=null){
+          //   $("input.two").val(storedItem2pm)
+          // }
+          // $(".twoBtn").click(function(event){
+          //   event.preventDefault();
+          //   var userInput = $("input.two");
+          //   var newCalItem = userInput.val();
+          //   localStorage.setItem("calItemsTwo", JSON.stringify(newCalItem))
+          // });
           
           if(storedItem3pm !=null){
             $("input.three").val(storedItem3pm)
@@ -258,10 +248,10 @@
           console.log(twelve);
 
           var one = $(".one").attr("data-hour");
-          console.log(ten);
+          console.log(one);
 
-          var two = $(".two").attr("data-hour");
-          console.log(two);
+          // var two = $(".two").attr("data-hour");
+          // console.log(two);
 
           var three = $(".three").attr("data-hour");
           console.log(three);
@@ -390,22 +380,22 @@
           }
           onePm();
 
-          function twoPm(){
-            if (moment===two) {
+          // function twoPm(){
+          //   if (moment===two) {
               
-            $("input.two").addClass("present");
-            console.log("present")
-          }
-          if (moment < two) {
-            $("input.two").addClass("future")
-            console.log("future")
-          }
-          else{
-            $("input.two").addClass("past")
-            console.log("past")
-          } 
-          }
-          twoPm();
+          //   $("input.two").addClass("present");
+          //   console.log("present")
+          // }
+          // if (moment < two) {
+          //   $("input.two").addClass("future")
+          //   console.log("future")
+          // }
+          // else{
+          //   $("input.two").addClass("past")
+          //   console.log("past")
+          // } 
+          // }
+          // twoPm();
 
           function threePm(){
             if (moment===three) {
