@@ -40,65 +40,65 @@
         </button>
       </form>
       <form class="row" method="POST">
-        <label class="hour eight" value="text" data-hour="08">08 AM</label>
-        <input type="text" placeholder="meeting" class="eight" />
-        <button class="saveBtn eightBtn">
+        <label class="hour eight col-2" value="text" data-hour="08">08 AM</label>
+        <input type="text" placeholder="meeting" class="eight col-8" />
+        <button class="saveBtn eightBtn col-2">
             <i: hover></i:>
         </button>
       </form>
       <form class="row" method="POST" id="09">
-        <label class="hour nine" value="text" data-hour="09" >09 AM</label>
-        <input type="text" placeholder="meeting" class="nine" />
-        <button class="saveBtn nineBtn">
+        <label class="hour nine col-2" value="text" data-hour="09" >09 AM</label>
+        <input type="text" placeholder="meeting" class="nine col-8" />
+        <button class="saveBtn nineBtn col-2">
             <i: hover></i:>
         </button>
       </form>
       <form class="row" method="POST" id="10">
-        <label class="hour ten" value="text" data-hour="10">10 AM</label>
-        <input type="text" placeholder="meeting" class="ten"/>
-        <button class="saveBtn tenBtn">
+        <label class="hour ten col-2" value="text" data-hour="10">10 AM</label>
+        <input type="text" placeholder="meeting" class="ten col-8"/>
+        <button class="saveBtn tenBtn col-2">
             <i: hover></i:>
         </button>
       </form>
       <form class="row" method="POST" id="11">
-        <label class="hour eleven" value="text" data-hour="11">11 AM</label>
-        <input type="text" placeholder="meeting" class="eleven"/>
-        <button class="saveBtn elevenBtn">
+        <label class="hour eleven col-2" value="text" data-hour="11">11 AM</label>
+        <input type="text" placeholder="meeting" class="eleven col-8"/>
+        <button class="saveBtn elevenBtn col-2">
             <i: hover></i:>
         </button>
       </form>
       <form class="row" method="POST" id="12">
-        <label class="hour twelve " value="text" data-hour="12">12 PM</label>
-        <input type="text" placeholder="meeting" class="twelve"/>
-        <button class="saveBtn twelveBtn">
+        <label class="hour twelve col-2" value="text" data-hour="12">12 PM</label>
+        <input type="text" placeholder="meeting" class="twelve col-8"/>
+        <button class="saveBtn twelveBtn col-2">
             <i: hover></i:>
         </button>
       </form>
       <form class="row" method="POST" id="1">
-        <label class="hour one" value="text" data-hour="13">01 PM</label>
-        <input type="text" placeholder="meeting" class="one"/>
-        <button class="saveBtn oneBtn">
+        <label class="hour one col-2" value="text" data-hour="13">01 PM</label>
+        <input type="text" placeholder="meeting" class="one col-8"/>
+        <button class="saveBtn oneBtn col-2">
             <i: hover></i:>
         </button>
       </form>
       <form class="row" method="POST" id="2">
-        <label class="hour two" value="text" data-hour="14">02 PM</label>
-        <input type="text" placeholder="meeting" class="two"/>
-        <button class="saveBtn twoBtn">
+        <label class="hour two col-2" value="text" data-hour="14">02 PM</label>
+        <input type="text" placeholder="meeting" class="two col-8"/>
+        <button class="saveBtn twoBtn col-2">
             <i: hover></i:>
         </button>
       </form>
       <form class="row" method="POST" id="3">
-        <label class="hour three" value="text" data-hour="15">03 PM</label>
-        <input type="text" placeholder="meeting" class="three"/>
-        <button class="saveBtn threeBtn">
+        <label class="hour three col-2" value="text" data-hour="15">03 PM</label>
+        <input type="text" placeholder="meeting" class="three col-8"/>
+        <button class="saveBtn threeBtn col-2">
             <i: hover></i:>
         </button>
       </form>
       <form class="row" method="POST" id="4">
-        <label class="hour four" value="text" data-hour="16">04 PM</label>
-        <input type="text" placeholder="meeting" class="four"/>
-        <button class="saveBtn fourBtn">
+        <label class="hour four col-2" value="text" data-hour="16">04 PM</label>
+        <input type="text" placeholder="meeting" class="four col-8"/>
+        <button class="saveBtn fourBtn col-2">
             <i: hover></i:>
         </button>
       </form>
@@ -114,7 +114,7 @@
           var storedItem11am = JSON.parse(localStorage.getItem("calItemsEleven"));
           var storedItem12pm = JSON.parse(localStorage.getItem("calItemsTwelve"));
           var storedItem1pm = JSON.parse(localStorage.getItem("calItemsOne"));
-
+          // var storedItem2pm = JSON.parse(localStorage.getItem("calItemsTwo"));
           var storedItem3pm = JSON.parse(localStorage.getItem("calItemsThree"));
           var storedItem4pm = JSON.parse(localStorage.getItem("calItemsFour"));
           
@@ -225,8 +225,8 @@
           var moment = moment().format("HH");
           console.log(moment);
 
-          // var currentDay = $("p#currentDay")
-          // currentDay.text(); 
+          var currentDay = $("p#currentDay")
+          currentDay.text(); 
           
           
           var seven = $(".seven").attr("data-hour");
