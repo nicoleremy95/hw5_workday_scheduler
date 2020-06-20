@@ -1,7 +1,11 @@
 # hw5_workday_scheduler
 hw 5 workday scheduler 
 
-In this project, I have created a calendar using moment.js, HTML, jQuery, and CSS. This calendar saves 
+In this project, I have created a calendar using moment.js, HTML, jQuery, and CSS. This calendar saves the users input into the local storage and shows the input even after the page refreshes. 
+
+The rows corresponding to each hour also update color based upon the current time. If it is the present hour, the row input turns pink. If the hour is in the past, the color is white. If the hour is in the future, the row turns green. 
+
+
 ## Images of Completed Website 
 
 ### Step 1
